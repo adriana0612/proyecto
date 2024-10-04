@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Candelaria - Velas Artesanales</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>La Candelaria</h1>
+        <nav>
+            <ul>
+                <li><a href="#about" class="nav-link">Sobre Nosotros</a></li>
+                <li><a href="#products" class="nav-link active">Productos</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+                <li><a href="#cart" id="cart-link">Carrito (<span id="cart-count">0</span>)</a></li>
+                <li>
+                    <input type="text" id="search-input" placeholder="Buscar productos..." />
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="products">
+        <h2>Productos (<span id="product-count">10</span>)</h2>
+        <div class="product-grid">
+            <div class="product" data-name="Vela Aromática" data-price="10.00" data-image="lavanda.jpg">
+                <img src="lavanda.jpg" alt="Vela Aromática" class="product-image">
+                <div class="details">
+                    <h3>Vela Aromática</h3>
+                    <p>Descripción: Vela hecha a mano con fragancia de lavanda.</p>
+                    <p>Precio: $10.00</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="product" data-name="Vela Decorativa" data-price="15.00" data-image="flor.jpg">
+                <img src="flor.jpg" alt="Vela Decorativa" class="product-image">
+                <div class="details">
+                    <h3>Vela Decorativa</h3>
+                    <p>Descripción: Vela decorativa en forma de flor.</p>
+                    <p>Precio: $15.00</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="product" data-name="Vela Ecológica" data-price="12.00" data-image="ecologica.jpg">
+                <img src="ecologica.jpg" alt="Vela Ecológica" class="product-image">
+                <div class="details">
+                    <h3>Vela Ecológica</h3>
+                    <p>Descripción: Vela hecha con cera de soja, 100% ecológica.</p>
+                    <p>Precio: $12.00</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="product" data-name="Vela de Coco" data-price="14.00" data-image="coco.jpg">
+                <img src="coco.jpg" alt="Vela de Coco" class="product-image">
+                <div class="details">
+                    <h3>Vela de Coco</h3>
+                    <p>Descripción: Vela con aroma a coco natural.</p>
+                    <p>Precio: $14.00</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="product" data-name="Vela de Vainilla" data-price="11.00" data-image="vainilla.jpg">
+                <img src="vainilla.jpg" alt="Vela de Vainilla" class="product-image">
+                <div class="details">
+                    <h3>Vela de Vainilla</h3>
+                    <p>Descripción: Vela aromática de vainilla.</p>
+                    <p>Precio: $11.00</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="product" data-name="Vela de Rosa" data-price="13.00" data-image="rosa.jpg">
+                <img src="rosa.jpg" alt="Vela de Rosa" class="product-image">
+                <div class="details">
+                    <h3>Vela de Rosa</h3>
+                    <p>Descripción: Vela decorativa con aroma de rosa.</p>
+                    <p>Precio: $13.00</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="product" data-name="Vela de Canela" data-price="12.50" data-image="canela.jpg">
+                <img src="canela.jpg" alt="Vela de Canela" class="product-image">
+                <div class="details">
+                    <h3>Vela de Canela</h3>
+                    <p>Descripción: Vela aromática con fragancia de canela.</p>
+                    <p>Precio: $12.50</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="product" data-name="Vela de Menta" data-price="12.00" data-image="menta.jpg">
+                <img src="menta.jpg" alt="Vela de Menta" class="product-image">
+                <div class="details">
+                    <h3>Vela de Menta</h3>
+                    <p>Descripción: Vela fresca con aroma de menta.</p>
+                    <p>Precio: $12.00</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="product" data-name="Vela de Naranja" data-price="11.50" data-image="naranja.jpg">
+                <img src="naranja.jpg" alt="Vela de Naranja" class="product-image">
+                <div class="details">
+                    <h3>Vela de Naranja</h3>
+                    <p>Descripción: Vela con fragancia de naranja.</p>
+                    <p>Precio: $11.50</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="product" data-name="Vela de Almendra" data-price="13.50" data-image="almendra.jpg">
+                <img src="almendra.jpg" alt="Vela de Almendra" class="product-image">
+                <div class="details">
+                    <h3>Vela de Almendra</h3>
+                    <p>Descripción: Vela con fragancia de almendra.</p>
+                    <p>Precio: $13.50</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="product" data-name="Vela de Chocolate" data-price="15.00" data-image="chocolate.jpg">
+                <img src="chocolate.jpg" alt="Vela de Chocolate" class="product-image">
+                <div class="details">
+                    <h3>Vela de Chocolate</h3>
+                    <p>Descripción: Vela aromática con fragancia de chocolate.</p>
+                    <p>Precio: $15.00</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+            <div class="product" data-name="Vela de Eucalipto" data-price="12.00" data-image="eucalipto.jpg">
+                <img src="eucalipto.jpg" alt="Vela de Eucalipto" class="product-image">
+                <div class="details">
+                    <h3>Vela de Eucalipto</h3>
+                    <p>Descripción: Vela con aroma de eucalipto.</p>
+                    <p>Precio: $12.00</p>
+                    <input type="number" value="1" min="1" class="quantity" />
+                    <button class="add-to-cart">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="hidden-section">
+        <h2>Sobre Nosotros</h2>
+        <p>En La Candelaria, nos dedicamos a crear velas artesanales de alta calidad, utilizando ingredientes naturales y fragancias únicas. Nuestro objetivo es proporcionar productos que no solo iluminen su hogar, sino que también lo hagan sentir especial.</p>
+        <h2>Misión</h2>
+        <p>-Producir y comercializar velas, orientándonos a satisfacer las necesidades de nuestros clientes con la innovación y creatividad constante del recurso humano, 
+            dando como resultado una amplia gama de productos para competir en el mercado. </p>
+        <p>-Proveer al mercado nacional de velas decorativas con modelos innovadores de alta calidad, ofrecidas a nuestros clientes a un precio justo para satisfacer sus más 
+                exigentes deseo.</p>
+        <h2>Visión</h2>
+        <p>Expandirnos territorialmente y proveer al mercado de manera nacional con diferentes modelos. Ser la opción de varias tiendas distribuidoras en todos los estados del país.</p>
+        <h2>Valores</h2>
+        <p>-Integridad: Actuamos con honestidad y transparencia en todas nuestras interacciones.</p>
+        <p>-Calidad: Nos comprometemos a ofrecer solo los mejores productos y servicios.</p>
+        <p>-Colaboración: Creemos en trabajar en equipo y construir relaciones sólidas.</p>
+    </section>
+
+    <section id="contact" class="hidden-section">
+        <h2>Contacto</h2>
+        <p>Para consultas y pedidos, envíanos un correo a <a href="mailto:lacandelaria.vela@gmail.com.com">lacandelaria.vela@gmail.com</a>.</p>
+    </section>
+
+    <section id="cart" class="hidden-section">
+        <h2>Carrito</h2>
+        <ul id="cart-items"></ul>
+        <p id="total-price">Total: $0.00</p>
+        <button id="order-button">Realizar Compra</button>
+    </section>
+
+    <section id="order" class="hidden-section">
+        <h2>Realizar Pedido</h2>
+        <p>¡Gracias por su compra!</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
